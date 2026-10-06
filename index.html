@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Boost – Technical & Aptitude Placement Quiz Platform</title>
+  <meta name="description" content="Prepare smarter for technical interviews, aptitude assessments, and campus placements with interactive quizzes, timed tests, instant feedback, and performance analytics." />
+  <meta property="og:title" content="Interview Boost – Placement & Technical Interview Preparation" />
+  <meta property="og:description" content="Prepare smarter for technical interviews, aptitude assessments, and campus placements with interactive quizzes, timed tests, instant feedback, and performance analytics." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#homeSection" class="brand-logo" aria-label="Interview Boost Homepage">
+        <div class="brand-icon">
+          <!-- Terminal / Code Icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </div>
+        <span>Interview<span class="text-gradient">Boost</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinksContainer">
+          <li><a href="#homeSection" class="nav-link active">Home</a></li>
+          <li><a href="#categoriesSection" class="nav-link">Categories</a></li>
+          <li><a href="#dashboardSection" class="nav-link">Dashboard</a></li>
+          <li><a href="#aboutSection" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Sound Effect Toggle -->
+        <button id="soundToggleBtn" class="icon-btn" title="Toggle Sound Feedback" aria-label="Toggle Sound Effects">
+          <!-- Icon injected dynamically via JS -->
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggleBtn" class="icon-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Dark or Light Theme">
+          <!-- Icon injected dynamically via JS -->
+        </button>
+
+        <!-- Start Quick Quiz CTA -->
+        <button id="navPracticeBtn" class="btn-primary" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Practice Now</span>
+        </button>
+
+        <!-- Mobile Navigation Hamburger -->
+        <button id="mobileNavToggle" class="icon-btn mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Home Section -->
+    <section id="homeSection" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-dot"></span>
+              Placement & Tech Readiness Platform
+            </div>
+            <h1 class="hero-title">
+              Prepare Smarter.<br />
+              <span class="text-gradient">Interview Better.</span>
+            </h1>
+            <p class="hero-description">
+              Elevate your technical proficiency, aptitude problem-solving, and logical reasoning with timed adaptive quizzes, instant answer breakdowns, and comprehensive performance analytics.
+            </p>
+            <div class="hero-actions">
+              <button id="heroStartBtn" class="btn-primary" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Quick Practice (10 Qs)</span>
+              </button>
+              <button id="heroMarathonBtn" class="btn-primary" style="background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);" type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span>Full Test (50–100 Qs)</span>
+              </button>
+              <button id="heroExploreBtn" class="btn-secondary" type="button">
+                <span>Explore Categories</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Visual: Tech Terminal & Test Suite Simulation -->
+          <div class="hero-visual">
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot red"></span>
+                  <span class="terminal-dot yellow"></span>
+                  <span class="terminal-dot green"></span>
+                </div>
+                <span class="terminal-title">placement_eval_suite.py</span>
+                <span style="font-size:0.7rem; color:#64748b;">Python 3.12</span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <span class="terminal-prompt">$</span>
+                  <span>pytest test_technical_round.py --benchmark</span>
+                </div>
+                <div class="terminal-line" style="color: #94a3b8; font-size: 0.8rem;">
+                  Running placement test battery across 9 core CS domains...
+                </div>
+                <div class="terminal-line">
+                  <span style="color:#10b981;">✓</span>
+                  <span>test_data_structures.py <span style="color:#64748b;">(O(log n) Lookup)</span></span>
+                </div>
+                <div class="terminal-line">
+                  <span style="color:#10b981;">✓</span>
+                  <span>test_sql_optimization.py <span style="color:#64748b;">(B-Tree Indexing)</span></span>
+                </div>
+                <div class="terminal-line">
+                  <span style="color:#10b981;">✓</span>
+                  <span>test_concurrency.py <span style="color:#64748b;">(Thread Visibility)</span></span>
+                </div>
+                <div class="terminal-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Candidate Score: 100% | Interview Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Statistics Bar -->
+        <div class="stats-section">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-value">108+</span>
+              <span class="stat-label">Curated Questions</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">50–100</span>
+              <span class="stat-label">Questions Range</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">9</span>
+              <span class="stat-label">Core Domains</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Instant Solutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Categories Section -->
+    <section id="categoriesSection" class="categories-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Subject Catalog</span>
+          <h2 class="section-title">Explore Practice Categories</h2>
+          <p class="section-description">
+            Choose a subject to launch a focused, timed assessment with immediate answer explanations and scoring.
+          </p>
+        </div>
+
+        <!-- Filter Segmented Tabs -->
+        <div class="category-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Topics</button>
+          <button class="filter-btn" data-filter="tech">Programming & DB</button>
+          <button class="filter-btn" data-filter="web">Web Technologies</button>
+          <button class="filter-btn" data-filter="aptitude">Aptitude & Reasoning</button>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="categories-grid">
+          <!-- 1. Python -->
+          <div class="category-card" data-category="python" data-group="tech">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482v-1.69c-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.53 1.03 1.53 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852v2.746c0 .268.18.58.688.48A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"></path>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">Python</h3>
+                <div class="category-meta-info">
+                  <span>OOP & GIL</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Intermediate</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Core syntax, mutable vs immutable types, list comprehensions, decorators, multi-threading, and dictionary complexity.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 2. Java -->
+          <div class="category-card" data-category="java" data-group="tech">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">Java</h3>
+                <div class="category-meta-info">
+                  <span>JVM & Collections</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Intermediate</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              JVM architecture, memory management, Collections framework, volatile keyword, thread safety, and exception handling.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 3. SQL -->
+          <div class="category-card" data-category="sql" data-group="tech">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">SQL & Databases</h3>
+                <div class="category-meta-info">
+                  <span>Queries & ACID</span>
+                  <span aria-hidden="true">·</span>
+                  <span>All Levels</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Relational joins, aggregation, HAVING vs WHERE, TRUNCATE vs DELETE, B-Tree indices, and ACID transaction mechanics.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 4. HTML & CSS -->
+          <div class="category-card" data-category="html_css" data-group="web">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">HTML & CSS</h3>
+                <div class="category-meta-info">
+                  <span>Layout & Semantics</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Foundation</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              CSS Box Model, specificity calculation, Flexbox axes, rem vs em units, display vs visibility, and semantic HTML5 tags.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 5. JavaScript -->
+          <div class="category-card" data-category="javascript" data-group="web">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">JavaScript</h3>
+                <div class="category-meta-info">
+                  <span>Async & Closures</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Advanced</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Event Loop mechanics, closures, scoping, Promise resolution, prototype chaining, array manipulation, and type coercion.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 6. Data Structures -->
+          <div class="category-card" data-category="data_structures" data-group="tech">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="8" height="8" rx="2"></rect>
+                  <rect x="14" y="2" width="8" height="8" rx="2"></rect>
+                  <rect x="8" y="14" width="8" height="8" rx="2"></rect>
+                  <line x1="6" y1="10" x2="6" y2="12"></line>
+                  <line x1="18" y1="10" x2="18" y2="12"></line>
+                  <line x1="6" y1="12" x2="12" y2="14"></line>
+                  <line x1="18" y1="12" x2="12" y2="14"></line>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">Data Structures</h3>
+                <div class="category-meta-info">
+                  <span>Trees, Graphs & Big-O</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Core CS</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Time and space complexities, binary heaps, balanced search trees, Dijkstra algorithm, stacks, queues, and collision resolution.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 7. Aptitude -->
+          <div class="category-card" data-category="aptitude" data-group="aptitude">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">Quantitative Aptitude</h3>
+                <div class="category-meta-info">
+                  <span>Speed Math & Logic</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Essential</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Time, speed & distance, percentage variations, ratios, work & pipes, compound interest, probability, and profit margins.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 8. Logical Reasoning -->
+          <div class="category-card" data-category="logical_reasoning" data-group="aptitude">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12h20"></path>
+                  <path d="M20 12l-4-4"></path>
+                  <path d="M20 12l-4 4"></path>
+                  <circle cx="6" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">Logical Reasoning</h3>
+                <div class="category-meta-info">
+                  <span>Puzzles & Deductions</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Essential</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Numerical series, blood relations, letter coding, syllogisms, directional sense, seating arrangements, and clock hands.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+
+          <!-- 9. Verbal Ability -->
+          <div class="category-card" data-category="verbal_ability" data-group="aptitude">
+            <div class="category-header">
+              <div class="category-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <div class="category-title-wrap">
+                <h3 class="category-title">Verbal Ability</h3>
+                <div class="category-meta-info">
+                  <span>Grammar & Vocabulary</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Foundation</span>
+                </div>
+              </div>
+            </div>
+            <p class="category-description">
+              Synonyms, antonyms, subject-verb agreement, idioms, spelling corrections, prepositions, and active-to-passive voice.
+            </p>
+            <div class="category-footer">
+              <span class="category-count">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                12 High-Yield Qs
+              </span>
+              <button class="btn-start-quiz" type="button">Start Quiz →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Quiz Interface View (Activated during active assessment) -->
+    <section id="quizSection" class="quiz-section">
+      <div class="container quiz-container">
+        <!-- Top Status Bar -->
+        <div class="quiz-top-bar">
+          <div class="quiz-category-info">
+            <span id="quizBadge" class="quiz-badge">Technical Round</span>
+            <span id="quizQuestionCounter" class="quiz-question-counter">Question 1 of 10</span>
+          </div>
+
+          <div class="quiz-timer-wrap" id="quizTimerWrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span id="quizTimerDisplay">10:00</span>
+          </div>
+        </div>
+
+        <!-- Progress Track -->
+        <div class="quiz-progress-track">
+          <div id="quizProgressFill" class="quiz-progress-fill"></div>
+        </div>
+
+        <!-- Question Quick Jump Palette (Supports 50 to 100 questions) -->
+        <div class="question-palette-wrap">
+          <div class="question-palette-header">
+            <span>Question Navigator (Click to Jump)</span>
+            <span id="answeredCounterDisplay">0 / 50 Answered</span>
+          </div>
+          <div id="questionPalette" class="question-palette">
+            <!-- Dynamically populated numbered buttons -->
+          </div>
+        </div>
+
+        <!-- Main Question Card -->
+        <div class="question-card" id="questionCard">
+          <h2 id="questionText" class="question-text">Loading question...</h2>
+
+          <!-- Optional Code Snippet Block -->
+          <div id="questionCodeWrap" style="display: none;">
+            <pre class="question-code-block"><code id="questionCode"></code></pre>
+          </div>
+
+          <!-- Options List -->
+          <div id="optionsList" class="options-list">
+            <!-- Dynamic 4 Options (A, B, C, D) -->
+          </div>
+        </div>
+
+        <!-- Action & Navigation Bar -->
+        <div class="quiz-controls">
+          <button id="btnQuitQuiz" class="btn-outline" type="button">Quit Quiz</button>
+
+          <div class="quiz-controls-right">
+            <button id="btnPrevQuestion" class="btn-secondary" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>Previous</span>
+            </button>
+            <button id="btnNextQuestion" class="btn-primary" type="button">
+              <span>Next</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button id="btnSubmitQuiz" class="btn-submit-quiz" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Submit Assessment</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Result Page View -->
+    <section id="resultSection" class="result-section">
+      <div class="container result-container">
+        <div class="result-card">
+          <div class="result-badge-kicker">Assessment Complete</div>
+          <h2 id="resultHeadline" class="result-headline">Excellent! You are interview ready.</h2>
+          <p id="resultFeedbackMsg" class="result-feedback-msg">Your performance demonstrates mastery of core concepts and rapid analytical problem solving.</p>
+
+          <!-- Animated Circular Score Gauge -->
+          <div class="score-gauge-wrap">
+            <svg class="score-gauge-svg" viewBox="0 0 160 160">
+              <circle class="score-gauge-bg" cx="80" cy="80" r="70"></circle>
+              <circle id="scoreGaugeCircle" class="score-gauge-circle" cx="80" cy="80" r="70"></circle>
+            </svg>
+            <div class="score-gauge-content">
+              <span id="resultScorePercent" class="score-gauge-percent">80%</span>
+              <span class="score-gauge-label">Accuracy</span>
+            </div>
+          </div>
+
+          <!-- Result KPI Grid -->
+          <div class="result-stats-grid">
+            <div class="result-stat-card">
+              <span class="result-stat-name">Final Score</span>
+              <span id="statFinalScore" class="result-stat-val">8 / 10</span>
+            </div>
+            <div class="result-stat-card correct">
+              <span class="result-stat-name">Correct</span>
+              <span id="statCorrectCount" class="result-stat-val">8</span>
+            </div>
+            <div class="result-stat-card incorrect">
+              <span class="result-stat-name">Incorrect</span>
+              <span id="statWrongCount" class="result-stat-val">2</span>
+            </div>
+            <div class="result-stat-card">
+              <span class="result-stat-name">Time Elapsed</span>
+              <span id="statTimeTaken" class="result-stat-val">04:32</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="result-actions">
+            <button id="btnRetryQuiz" class="btn-primary" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6 5.67"></path></svg>
+              <span>Retry Quiz</span>
+            </button>
+            <button id="btnChooseCategory" class="btn-secondary" type="button">
+              <span>Choose Another Category</span>
+            </button>
+            <button id="btnGoDashboard" class="btn-outline" type="button">
+              <span>View Dashboard Analytics</span>
+            </button>
+          </div>
+
+          <!-- Detailed Answer Key & Explanations Breakdown -->
+          <div class="review-answers-wrap">
+            <div class="review-answers-header">
+              <h3 class="review-answers-title">Question Breakdown & Solutions</h3>
+              <span style="font-size:0.85rem; color:var(--text-muted);">Verified Explanations</span>
+            </div>
+            <div id="reviewAnswersContainer">
+              <!-- Dynamically populated answer review cards -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Performance Dashboard Section -->
+    <section id="dashboardSection" class="dashboard-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Personal Analytics</span>
+          <h2 class="section-title">Performance Dashboard</h2>
+          <p class="section-description">
+            Monitor your placement readiness trajectory, average accuracy across tests, and topic mastery.
+          </p>
+        </div>
+
+        <!-- 4 Top KPI Cards -->
+        <div class="dashboard-stats-grid">
+          <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <div class="dashboard-stat-content">
+              <span id="dashTotalQuizzes" class="dashboard-stat-number">0</span>
+              <span class="dashboard-stat-label">Quizzes Completed</span>
+            </div>
+          </div>
+
+          <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="dashboard-stat-content">
+              <span id="dashAvgScore" class="dashboard-stat-number">0%</span>
+              <span class="dashboard-stat-label">Average Score</span>
+            </div>
+          </div>
+
+          <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="dashboard-stat-content">
+              <span id="dashBestScore" class="dashboard-stat-number">0%</span>
+              <span class="dashboard-stat-label">Best Score</span>
+            </div>
+          </div>
+
+          <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="dashboard-stat-content">
+              <span id="dashTotalCorrect" class="dashboard-stat-number">0</span>
+              <span class="dashboard-stat-label">Correct Answers</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="dashboard-charts-grid">
+          <!-- Recent Score Progression Chart -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3 class="chart-card-title">Recent Test Score Trajectory</h3>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Last 7 Attempts</span>
+            </div>
+            <div id="chartCanvasWrap" class="chart-canvas-wrap">
+              <!-- Dynamically populated CSS bar chart -->
+            </div>
+          </div>
+
+          <!-- Category Mastery Breakdown -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3 class="chart-card-title">Topic Mastery Index</h3>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Avg Accuracy</span>
+            </div>
+            <div id="categoryMasteryList" class="category-mastery-list">
+              <!-- Dynamically populated progress bars -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Attempts Log Table -->
+        <div class="recent-attempts-card">
+          <div class="chart-card-header">
+            <h3 class="chart-card-title">Recent Assessment History</h3>
+            <div style="display:flex; gap:0.5rem;">
+              <button id="btnExportHistory" class="btn-outline" style="padding:0.35rem 0.75rem; font-size:0.775rem;">Export JSON</button>
+              <button id="btnClearHistory" class="btn-outline" style="padding:0.35rem 0.75rem; font-size:0.775rem; color:var(--color-danger);">Clear History</button>
+            </div>
+          </div>
+          <div class="recent-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Date & Time</th>
+                  <th>Score / Total</th>
+                  <th>Time Elapsed</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recentAttemptsBody">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. About Section & Placement Strategy Guide -->
+    <section id="aboutSection" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="section-eyebrow">About Platform</span>
+            <h2 class="section-title">Built For Engineers & Placement Aspirants</h2>
+            <p class="section-description">
+              Interview Boost was engineered to bridge the gap between classroom theory and real-world campus recruitment assessments. Designed with strict fidelity to placement test patterns of top product and service-based technology companies.
+            </p>
+
+            <div class="about-features-grid">
+              <div class="about-feature-box">
+                <span class="about-feature-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Interactive Quizzes
+                </span>
+                <span class="about-feature-desc">Engage with authentic multiple-choice interview questions under realistic time pressure.</span>
+              </div>
+              <div class="about-feature-box">
+                <span class="about-feature-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                  Instant Feedback
+                </span>
+                <span class="about-feature-desc">Understand not just what is correct, but why, with detailed architectural breakdowns.</span>
+              </div>
+              <div class="about-feature-box">
+                <span class="about-feature-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                  Progress Tracking
+                </span>
+                <span class="about-feature-desc">Zero login friction; all assessment records are safely preserved in browser local storage.</span>
+              </div>
+              <div class="about-feature-box">
+                <span class="about-feature-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  Mobile Friendly
+                </span>
+                <span class="about-feature-desc">Fully responsive touch controls and keyboard shortcuts (1, 2, 3, 4, N, P) for desktop efficiency.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placement Prep Strategy Cards -->
+          <div class="tips-grid" style="grid-template-columns: 1fr; gap: 1rem;">
+            <div class="tip-card">
+              <div class="tip-number">01</div>
+              <h4 class="tip-title">Technical Round Strategy</h4>
+              <p class="tip-text">Focus heavily on asymptotic time & space complexities (Big-O), memory allocation differences, and internal data structure implementations.</p>
+            </div>
+            <div class="tip-card">
+              <div class="tip-number">02</div>
+              <h4 class="tip-title">Aptitude Time Management</h4>
+              <p class="tip-text">In placement screening rounds, allocate strictly 60 seconds per aptitude question. If stuck on a lengthy algebra equation, mark and move forward.</p>
+            </div>
+            <div class="tip-card">
+              <div class="tip-number">03</div>
+              <h4 class="tip-title">Structured Communication (STAR)</h4>
+              <p class="tip-text">For technical and behavioral discussions, structure project experiences using Situation, Task, Action, and Measurable Result.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-wrap">
+          <div class="brand-logo">
+            <div class="brand-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <span>Interview<span class="text-gradient">Boost</span></span>
+          </div>
+          <p class="footer-desc">
+            A comprehensive, client-side placement preparation suite built for computer science engineering students. Master coding, database internals, and aptitude tests.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#homeSection" class="footer-link">Home</a></li>
+            <li><a href="#categoriesSection" class="footer-link">Practice Categories</a></li>
+            <li><a href="#dashboardSection" class="footer-link">Performance Dashboard</a></li>
+            <li><a href="#aboutSection" class="footer-link">About & Placement Tips</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Top Categories</h4>
+          <ul class="footer-links-list">
+            <li><a href="#categoriesSection" class="footer-link">Data Structures</a></li>
+            <li><a href="#categoriesSection" class="footer-link">Python & OOP</a></li>
+            <li><a href="#categoriesSection" class="footer-link">Java & Multithreading</a></li>
+            <li><a href="#categoriesSection" class="footer-link">SQL & Indexing</a></li>
+            <li><a href="#categoriesSection" class="footer-link">Quantitative Aptitude</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hotkeys</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link"><kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> / <kbd>4</kbd> - Select Option</li>
+            <li class="footer-link"><kbd>A</kbd> / <kbd>B</kbd> / <kbd>C</kbd> / <kbd>D</kbd> - Select Choice</li>
+            <li class="footer-link"><kbd>→</kbd> / <kbd>N</kbd> - Next Question</li>
+            <li class="footer-link"><kbd>←</kbd> / <kbd>P</kbd> - Previous Question</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Interview Boost. Designed for B.E. Computer Science Engineering Portfolios.</span>
+        <div class="footer-badges">
+          <span>Vanilla JavaScript</span>
+          <span aria-hidden="true">·</span>
+          <span>CSS3 Custom Properties</span>
+          <span aria-hidden="true">·</span>
+          <span>Zero External Dependencies</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Assessment Configuration Modal (Supports 10 to 100 questions) -->
+  <div id="quizConfigModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box" style="max-width: 520px;">
+      <h3 class="modal-title" id="configModalTitle">Configure Assessment</h3>
+      <p class="modal-desc" id="configModalDesc">Choose the number of questions for your timed test session (10 to 100 range).</p>
+
+      <div class="quiz-config-section">
+        <label class="config-label">Select Question Count Range (10 – 100):</label>
+        <div class="length-presets-grid" id="lengthPresetsContainer">
+          <button type="button" class="preset-chip" data-count="10">10 Qs</button>
+          <button type="button" class="preset-chip" data-count="25">25 Qs</button>
+          <button type="button" class="preset-chip active" data-count="50">50 Qs</button>
+          <button type="button" class="preset-chip" data-count="75">75 Qs</button>
+          <button type="button" class="preset-chip" data-count="100">100 Qs</button>
+        </div>
+
+        <div class="slider-container">
+          <input type="range" id="questionCountSlider" class="range-slider" min="10" max="100" value="50" step="5" />
+          <span id="questionCountBadge" class="slider-val-badge">50 Qs</span>
+        </div>
+
+        <div class="config-time-estimate">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span id="configTimeEstimateText">Allocated Time: 50 Minutes (1 min / question)</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="modalConfigCancelBtn" class="btn-secondary" type="button">Cancel</button>
+        <button id="modalConfigStartBtn" class="btn-primary" type="button">Launch Assessment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h3 id="modalTitle" class="modal-title">Confirm Action</h3>
+      <p id="modalDesc" class="modal-desc">Are you sure you want to proceed?</p>
+      <div class="modal-actions">
+        <button id="modalCancelBtn" class="btn-secondary" type="button">Cancel</button>
+        <button id="modalConfirmBtn" class="btn-primary" type="button">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript Entry -->
+  <script src="./script.js"></script>
+</body>
+</html>

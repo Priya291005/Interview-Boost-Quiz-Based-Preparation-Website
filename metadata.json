@@ -1,0 +1,6 @@
+{
+  "name": "Interview Boost",
+  "description": "Premium quiz-based technical interview and placement preparation platform with real-time scoring, timer, performance dashboard, and category-based practice.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
